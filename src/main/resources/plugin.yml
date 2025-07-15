@@ -1,0 +1,8 @@
+name: OrisInfoInterface
+version: '1.0'
+main: com.lfmissonb.oris.OrisInfoInterface
+api-version: '1.21'
+load: STARTUP
+authors: [ lfmissonb ]
+description: A plugin provides interfaces to get server infos.
+website: darkglow.cn
