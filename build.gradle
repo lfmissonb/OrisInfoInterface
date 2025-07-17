@@ -4,18 +4,22 @@ plugins {
 }
 
 group = 'com.lfmissonb'
-version = '1.0'
+version = '1.1'
 
 repositories {
-    maven { url 'https://maven.aliyun.com/repository/public/' }
     mavenCentral()
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
     maven {
-        name = 'papermc'
-        url = 'https://repo.papermc.io/repository/maven-public/'
+        name = "papermc"
+        url = uri("https://repo.papermc.io/repository/maven-public/")
     }
 }
 
 dependencies {
+    // compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
+    // compileOnly("com.destroystokyo.paper:paper-api:1.9.4-R0.1-SNAPSHOT")
+    // implementation("com.google.code.gson:gson:2.13.1")
     compileOnly("io.papermc.paper:paper-api:1.21.7-R0.1-SNAPSHOT")
 }
 

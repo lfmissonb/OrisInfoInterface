@@ -1,36 +1,11 @@
-# Oris Info Interface Configuration
-# ----------------------------------
+# Oris Info Interface
 
-# ----------------------------------
-# API Usage
-# ----------------------------------
-# Get plugin version:
-#   GET /version
-#   → { "version": "1.1" }
+A Minecraft plugin provides interfaces to get server infos.  
+🎉**This is my very first open-source project! - your feedback is priceless!**
 
-# Get server information:
-#   GET /info
-#   → {
-#       "tps": {
-#         "current": 20.00,         // float, -1 if disabled
-#         "history": {
-#           "<timestamp>": 19.00    // Historical TPS (Unix timestamp(str) in seconds → value)
-#         }
-#       },
-#       "mspt": {
-#         "current": 50.00,         // float, -1 if disabled
-#         "history": {
-#           "<timestamp>": 50.00
-#         }
-#       },
-#       "player": {
-#         "current": 10,            // int, -1 if disabled
-#         "history": {
-#           "<timestamp>": 20
-#         }
-#       }
-#     }
+## Config
 
+```yaml
 # ----------------------------------
 # General Settings
 # ----------------------------------
@@ -69,3 +44,44 @@ mspt:
     enabled: true
     retention-days: 30
     refresh-delay: 60
+
+```
+
+## API Usage
+
+**GET /version** get the plugin version
+
+```json
+{
+  "version": "1.1"
+}
+```
+
+**GET /info** get the infos
+
+```json
+{
+  "tps": {
+    "current": 20.00,
+    // float, -1 if disabled
+    "history": {
+      "<timestamp>": 19.00
+      // Historical TPS (Unix timestamp(str) in seconds → value)
+    }
+  },
+  "mspt": {
+    "current": 50.00,
+    // float, -1 if disabled
+    "history": {
+      "<timestamp>": 50.00
+    }
+  },
+  "player": {
+    "current": 10,
+    // int, -1 if disabled
+    "history": {
+      "<timestamp>": 20
+    }
+  }
+}
+```

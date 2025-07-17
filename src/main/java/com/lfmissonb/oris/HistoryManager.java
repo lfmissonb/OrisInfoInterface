@@ -8,19 +8,19 @@ import java.sql.*;
 import java.util.logging.Logger;
 
 public class HistoryManager {
-    Logger logger;
-    OrisInfoInterface plugin;
+    final Logger logger;
+    final OrisInfoInterface plugin;
 
-    boolean playerHistoryEnabled;
-    int playerHistoryRetentionDays;
+    final boolean playerHistoryEnabled;
+    final int playerHistoryRetentionDays;
 
-    boolean tpsHistoryEnabled;
-    int tpsHistoryRetentionDays;
-    int tpsRefreshDelay;
+    final boolean tpsHistoryEnabled;
+    final int tpsHistoryRetentionDays;
+    final int tpsRefreshDelay;
 
-    boolean msptHistoryEnabled;
-    int msptHistoryRetentionDays;
-    int msptRefreshDelay;
+    final boolean msptHistoryEnabled;
+    final int msptHistoryRetentionDays;
+    final int msptRefreshDelay;
 
     PlayerListener playerListener;
     int lastPlayerNum = -1;

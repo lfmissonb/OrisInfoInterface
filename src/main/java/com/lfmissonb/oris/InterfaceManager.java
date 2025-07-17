@@ -36,7 +36,7 @@ public class InterfaceManager {
         Gson gson = new Gson();
 
         JsonObject versionJson = new JsonObject();
-        versionJson.addProperty("version", plugin.getPluginMeta().getVersion());
+        versionJson.addProperty("version", plugin.getDescription().getVersion());
         String versionJsonString = gson.toJson(versionJson);
 
         httpServer.createContext("/", new BaseHandler() {
@@ -82,7 +82,7 @@ public class InterfaceManager {
                 msptJson.add("history", msptHistory);
                 infoJson.add("mspt", msptJson);
 
-                double playerCurrent = -1;
+                int playerCurrent = -1;
                 JsonObject playerHistory = new JsonObject();
                 if (plugin.getConfig().getBoolean("player.enabled")) {
                     playerCurrent = plugin.getPlayerNum();
